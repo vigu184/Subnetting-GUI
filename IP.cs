@@ -39,27 +39,27 @@ namespace Subnetting_GUI
         {
             if (IPOctet0.CompareTo(126) <= 0)
             {
-                IPClass = 'a';
+                IPClass = 'A';
             }
             else if (IPOctet0.CompareTo(128) >= 0
                       && IPOctet0.CompareTo(191) <= 0)
             {
-                IPClass = 'b';
+                IPClass = 'B';
             }
             else if (IPOctet0.CompareTo(192) >= 0
                       && IPOctet0.CompareTo(223) <= 0)
             {
-                IPClass = 'c';
+                IPClass = 'C';
             }
             else if (IPOctet0.CompareTo(224) >= 0
                       && IPOctet0.CompareTo(239) <= 0)
             {
-                IPClass = 'd';
+                IPClass = 'D';
             }
             else if (IPOctet0.CompareTo(240) >= 0
                       && IPOctet0.CompareTo(254) <= 0)
             {
-                IPClass = 'e';
+                IPClass = 'E';
             }
             else if (IPOctet0.Equals(127))
             {
@@ -76,17 +76,17 @@ namespace Subnetting_GUI
             SubnetOctet[0] = 255;
             switch (IPClass)
             {
-                case 'a':
+                case 'A':
                     SubnetOctet[1] = 0;
                     SubnetOctet[2] = 0;
                     SubnetOctet[3] = 0;
                     break;
-                case 'b':
+                case 'B':
                     SubnetOctet[1] = 255;
                     SubnetOctet[2] = 0;
                     SubnetOctet[3] = 0;
                     break;
-                case 'c':
+                case 'C':
                     SubnetOctet[1] = 255;
                     SubnetOctet[2] = 255;
                     SubnetOctet[3] = 0;
