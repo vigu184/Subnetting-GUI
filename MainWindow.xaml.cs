@@ -36,7 +36,18 @@ namespace Subnetting_GUI
 
 
         }
+        private void GotFocusReset(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            FirstIP.ClearValue(Label.ContentProperty);
+            LastIP.ClearValue(Label.ContentProperty);
+            SubnetMask.ClearValue(Label.ContentProperty);
+            nHosts.ClearValue(Label.ContentProperty);
 
+            textBox.GotFocus -= GotFocusReset;
+
+
+        }
         private void Run_Click(object sender, RoutedEventArgs e)
         {
             iP = new IP();
@@ -99,10 +110,31 @@ namespace Subnetting_GUI
             }
         }
 
-        private void NextP_Click(object sender, RoutedEventArgs e)
+        private void NextP_Click3(object sender, RoutedEventArgs e)
+        {
+            if (FirstIP.Content != null)
+            {
+                P3.Visibility = Visibility.Hidden;
+                P4.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("Forgot Go","Warning",MessageBoxButton.OK,MessageBoxImage.Warning);
+                Run3_Click(sender, e);
+            }
+        }
+
+        private void BackP_Click3(object sender, RoutedEventArgs e)
         {
             P3.Visibility = Visibility.Hidden;
-            P4.Visibility = Visibility.Visible;
+            P2.Visibility = Visibility.Visible;
+        }
+
+        private void BackP_Click4(object sender, RoutedEventArgs e)
+        {
+            P4.Visibility = Visibility.Hidden;
+            P3.Visibility = Visibility.Visible;
+            SubnetNo.GotFocus += GotFocusReset;
         }
     }
 }

@@ -174,7 +174,14 @@
                     Grid.Column="1"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
-                    Click="NextP_Click"/>
+                    Click="NextP_Click3"/>
+            <Button Name="BackP" Content="Previous Page"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="BackP_Click3"/>
+
         </Grid>
         <Grid Name="P4" Visibility="Hidden">
             <Grid.ColumnDefinitions>
@@ -213,6 +220,14 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    />
+            <Button Name="BackP4"
+                    Content="Previous Page"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Click="BackP_Click4"/>
+
 
         </Grid>
     </Grid>
