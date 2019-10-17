@@ -87,14 +87,22 @@ namespace Subnetting_GUI
         {
             if (S.SetNumSubnets(NumSubnet.Text))
             {
-                S.SetSubnetMask();
+                SubnetMask.Content=S.SetSubnetMask();
                 int sno;
                 if (!int.TryParse(SubnetNo.Text, out sno) || S.TotalSubnets > sno)
                 {
-                    FirstIP.Content =S.GetSubnetFirstIP(sno);
-                    LastIP.Content = S.GetSubnetLastIP(sno);
+                    FirstIP.Content =S.GetSubnetFirstIP(sno-1);
+                    LastIP.Content = S.GetSubnetLastIP(sno-1);
+                    //SubnetMask.Content=S.
+                    nHosts.Content = S.Host;
                 }
             }
+        }
+
+        private void NextP_Click(object sender, RoutedEventArgs e)
+        {
+            P3.Visibility = Visibility.Hidden;
+            P4.Visibility = Visibility.Visible;
         }
     }
 }

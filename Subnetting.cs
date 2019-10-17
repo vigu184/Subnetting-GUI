@@ -4,14 +4,14 @@ using System.Text;
 
 namespace Subnetting_GUI
 {
-     class Subnetting
+    class Subnetting
     {
         string IpAddress;
         byte[] SubnetMaskOctet;
         byte[] DefaultMaskOctet;
         internal int TotalSubnets;
-        int TotalHosts;
-        int Host;// No. of hosts per subnet 
+        public int TotalHosts { get; private set; }
+        public int Host { get; private set; }// No. of hosts per subnet 
 
 
         //Function stores the network details fro the IP passed as arguments
@@ -41,7 +41,7 @@ namespace Subnetting_GUI
         }
 
         //Function asks for the Number of subnets and ,rounding of to the nearest power of 2, creates new subnet mask and subnets
-        public int SetSubnetMask()
+        public string SetSubnetMask()
         {
             int i, j;
             Host = 1;
@@ -95,7 +95,7 @@ namespace Subnetting_GUI
 
             Console.WriteLine("Hosts Per Subnet: {0}", Host);
 
-            return 0;
+            return sb.ToString();
         }
 
         public string GetSubnetFirstIP(int subnetno)

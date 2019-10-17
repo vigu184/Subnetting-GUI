@@ -169,6 +169,51 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Click="Run3_Click"/>
+            <Button Name="NextP" Content="Next Page"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="NextP_Click"/>
+        </Grid>
+        <Grid Name="P4" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Subnet Mask"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   />
+            <Label Name="SubnetMask"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   />
+            <Label Content="Number of Hosts in the Subnet"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   />
+            <Label Name="nHosts"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   />
+
         </Grid>
     </Grid>
 </Window>
